@@ -10,7 +10,7 @@ var requestHandler = function(request, response) {
   var parsedUrl = url.parse(request.url);
 
   // Check if request is for '/listings'. If not, change statusCode to 404
-  if(parsedUrl.path == '/listings') response.end(listingData);
+  if(parsedUrl.path == '/listings' || parsedUrl.path == '/') response.end(listingData);
   else {
     response.statusCode = 404;
     response.end('Bad gateway error');
